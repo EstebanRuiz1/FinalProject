@@ -16,6 +16,7 @@ public class Console{
 	public static final String GET_EIGHT_OPTION = "Ingrese 8 para ver ganancias mesuales";
 	public static final String GET_NINE_OPTION = "Ingrese 9 para ver las ganancias anuales";
 	public static final String WARP_TIME = "Ingrese 0 para adelantar el tiempo en dos semanas";
+	public static final String CHICKEN = "Ingrese cuantos corrales desea llenar";
 
 	public Console(){
 		sc = new Scanner(System.in);
@@ -33,6 +34,9 @@ public class Console{
 		System.out.println(GET_NINE_OPTION);
 		return sc.nextByte();
 	}
+	public int getChicken(){
+		System.out.println(CHICKEN);
+	} 
 	
 	
 }
