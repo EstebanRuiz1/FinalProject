@@ -18,6 +18,8 @@ public class Console{
 	public static final String WARP_TIME = "Ingrese 0 para adelantar el tiempo en dos semanas";
 	public static final String CHICKEN = "Ingrese cuantos corrales desea llenar";
 
+	public static final String GET_FIRST_SIZE = "Ingrese los pollos que desea meter al corral ";
+
 	public Console(){
 		sc = new Scanner(System.in);
 	}
@@ -36,6 +38,8 @@ public class Console{
 	}
 	public int getChicken(){
 		System.out.println(CHICKEN);
+		System.out.println(GET_FIRST_SIZE);
+		return sc.nextInt();
 	} 
 	
 	
