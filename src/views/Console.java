@@ -15,7 +15,7 @@ public class Console{
 	public static final String GET_SEVEN_OPTION = "Ingrese 7 para ver el pollo vendido muerto";
 	public static final String GET_EIGHT_OPTION = "Ingrese 8 para ver las ganancias mesuales";
 	public static final String GET_NINE_OPTION = "Ingrese 9 para ver las ganancias anuales";
-	public static final String WARP_TIME = "Ingrese 0 para adelantar el tiempo dos semanas";
+	public static final String WARP_TIME = "Ingrese 0 para adelantar el tiempo en dos semanas";
 
 	public Console(){
 		sc = new Scanner(System.in);
