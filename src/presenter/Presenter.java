@@ -20,19 +20,34 @@ public class Presenter{
 				menu();
 			break;
 			case 2:
-				food();
+				dead();
 				menu();
 			break;
 			case 3:
-				expenditure();
+				food();
 				menu();
 			break;
 			case 4:
-				mantainance();
+				calCas();
 				menu();
 			break;
 			case 5:
-				exit();
+				mantainance();
+			break;
+			case 6:
+				sellDeadAndAlive();
+				menu();
+			break;
+			case 7:
+				mensualMoney();
+				menu();
+			break;
+			case 8:
+				anualMoney();
+				menu();
+			break;
+			case 9:
+				exitApp();
 			break;
 			default:
 				error();
@@ -41,22 +56,35 @@ public class Presenter{
 		}
 	}
 	public void addChicken(){
-
+		int chicken = cs.getChicken();
+	}
+	public void dead(){
+	//	int deadChicken = op.countDead();
 	}
 	public void food(){
-
+	//	int food = op.countFood();
 	}
-	public void expenditure(){
-
+	public void calCas(){
+	//	int spendCalCas = op.doCalCasOperation();
 	}
 	public void mantainance(){
-
+	//	int mantainance = op.getMantainance();
+	}	
+	public void sellDeadAndAlive(){
+	//	int alive = op.selledAliveChicken();
+	//	int dead = op.selledDeadChicken();
 	}
-	public void exit(){
-
+	public void mensualMoney(){
+	//	double mMoney = op.doMensualMoney();
+	}
+	public void anualMoney(){
+	//	double yMoney = op.doAnualMoney();
+	}
+	public void exitApp(){
+		cs.exitApp();	
 	}
 	public void error(){
-
+		cs.showError();
 	}
 	
 }

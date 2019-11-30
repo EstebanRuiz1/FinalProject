@@ -1,1 +1,6 @@
+/models/
+/presenter/
+/run/
 /views/
+/.classpath
+/.project
