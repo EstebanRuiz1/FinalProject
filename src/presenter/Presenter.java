@@ -1,7 +1,9 @@
 package presenter;
 
-import models.*;
+import models.Avicola;
+import models.Chicken;
 import views.Console;
+
 
 public class Presenter{
 	private Avicola av;
@@ -10,6 +12,7 @@ public class Presenter{
 	public Presenter(){
 		av = new Avicola();
 		cs = new Console();
+		av.generateDate();
 		menu();
 	}
 	public void menu(){
@@ -33,6 +36,7 @@ public class Presenter{
 			break;
 			case 5:
 				mantainance();
+				menu();
 			break;
 			case 6:
 				sellDeadAndAlive();
@@ -56,7 +60,8 @@ public class Presenter{
 		}
 	}
 	public void addChicken(){
-		int chicken = cs.getChicken();
+//		int chicken = cs.getChicken();
+		av.fillChicken();
 	}
 	public void dead(){
 	//	int deadChicken = op.countDead();

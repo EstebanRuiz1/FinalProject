@@ -1,9 +1,11 @@
 package models;
 
+import java.time.LocalDate;
+
 public class Chicken{
+	private LocalDate Birthday;
 
-
-	public int fillChicken(){
-		
-	}	
+	public Chicken(LocalDate date) {
+		Birthday = date;
+	}
 }
