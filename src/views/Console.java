@@ -20,6 +20,7 @@ public class Console{
 	public static final String GOOD_BYE = "Gracias por usar la aplicación :)";
 	public static final String BACK  = "Ingrese 6 para volver al menú anterior";
 	public static final String ERROR = "Ingrese una opcion valida";
+	public static final String FULL = "Lista de pollos llena :)";
 
 	public static final String GET_FIRST_SIZE = "Ingrese 1 para llenar todos los corrales";
 
@@ -49,6 +50,9 @@ public class Console{
 	}
 	public void showError(){
 		System.out.println(ERROR);
+	}
+	public void chickenFull(){
+		System.out.println(FULL);
 	}
 	
 	

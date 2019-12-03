@@ -15,11 +15,13 @@ public class Presenter{
 		cs = new Console();;
 		menu();
 	}
+	
 	public void menu(){
 		byte option = cs.getOption();
 		switch (option) {
 			case 1:
 				addChicken();
+				showFillChicken();
 				menu();
 			break;
 			case 2:
@@ -59,8 +61,11 @@ public class Presenter{
 			break;
 		}
 	}
+	public void showFillChicken(){
+		cs.chickenFull();
+	}
 	public void addChicken(){
-//		int chicken = cs.getChicken();
+	//int chicken = cs.getChicken();
 		av.fillChicken();
 	}
 	public void dead(){

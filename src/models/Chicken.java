@@ -8,7 +8,7 @@ public class Chicken{
 	private Random Life;
 
 	int valueLife = ran.nextInt(99+1);
-	public int fillChicken(){
+	public void fillChicken(){
 
 	}
 	public int Chicken(Random ran) {
