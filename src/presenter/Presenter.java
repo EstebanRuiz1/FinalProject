@@ -1,18 +1,18 @@
 package presenter;
 
-import models.Avicola;
+import models.Poultry;
 import models.Chicken;
+import models.Poultry;
 import views.Console;
 
 
 public class Presenter{
-	private Avicola av;
+	private Poultry av;
 	private Console cs;
 
 	public Presenter(){
-		av = new Avicola();
-		cs = new Console();
-		av.generateDate();
+		av = new Poultry();
+		cs = new Console();;
 		menu();
 	}
 	public void menu(){

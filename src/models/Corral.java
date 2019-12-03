@@ -9,7 +9,7 @@ public class Corral {
 		counter = 0;
 	}
 
-	public void addChicken(Chicken chicken) {
+	public void setChicken(Chicken chicken) {
 		listChicken[counter] = chicken;
 		counter++;
 	}
