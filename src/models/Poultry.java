@@ -42,8 +42,8 @@ public class Poultry{
 	}
 	public int deadChicken(){
 		int dead = 0;
-		for (int i = 0;i<listCorral[i].length() ;i++ ) {
-			for (int j = 0;j<listCorral[i].length ;j++ ) {
+		for (int i = 0;i<listCorral.length ;i++ ) {
+			for (int j = 0;j<listCorral[i].getListChicken() ;j++ ) {
 				if (listCorral[i] < DEAD_PARAMETER) {
 					dead++;		
 				}
@@ -54,7 +54,7 @@ public class Poultry{
 	public int killChicken(){
 		int kill = 0;
 		for (int i = 0;i<listCorral.length;i++ ) {
-			for (int j = 0;j<listCorral[i].length ;j++ ) {
+			for (int j = 0;j<listCorral[i].getListChicken() ;j++ ) {
 				if (listCorral[i] < KILL_PARAMETER) {
 					kill++;
 				}
