@@ -15,7 +15,9 @@ public class Poultry{
 		listCorral = new Corral[10];
 		generateCorral();
 	}
-	
+	public void addChicken(){
+
+	}
 	public void generateCorral() {
 		for (int i = 0; i < listCorral.length; i++) {
 			listCorral[i] = new Corral();
@@ -30,7 +32,7 @@ public class Poultry{
 	public void fillChicken(){
 		for (int i = 0; i < listCorral.length; i++) {
 			for (int j = 0; j < listCorral[i].getListChicken().length; j++) {
-				listCorral[i].addChicken(new Chicken(ran.nextInt()));
+				listCorral[i].setChicken(new Chicken());
 			}
 		}
 	}	
