@@ -64,7 +64,7 @@ public class Poultry{
 	}
 	*/public int deadPercentage(int dead){
 		int percent = (dead * ONE_HUNDRED)/TOTAL;
-	 return percent;
-	 System.out.println(percent);
+	System.out.println(percent); 
+	return percent;
 	}	
 }
