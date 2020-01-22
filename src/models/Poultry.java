@@ -33,7 +33,7 @@ public class Poultry{
 		}
 	}
 	
-	public void fillChicken(){
+	/*public void fillChicken(){
 		for (int i = 0; i < listCorral.length; i++) {
 			for (int j = 0; j < listCorral[i].getListChicken().length; j++) {
 				listCorral[i].setChicken(new Chicken());
@@ -62,7 +62,7 @@ public class Poultry{
 		}
 	return kill;
 	}
-	public int deadPercentage(int dead){
+	*/public int deadPercentage(int dead){
 		int percent = (dead * ONE_HUNDRED)/TOTAL;
 	 return percent;
 	 System.out.println(percent);
