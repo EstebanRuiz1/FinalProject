@@ -33,13 +33,13 @@ public class Poultry{
 		}
 	}
 	
-	/*public void fillChicken(){
-		for (int i = 0; i < listCorral.length; i++) {
+	public void fillChicken(){
+		/*for (int i = 0; i < listCorral.length; i++) {
 			for (int j = 0; j < listCorral[i].getListChicken().length; j++) {
 				listCorral[i].setChicken(new Chicken());
 			}
-		}
-	}
+		}*/
+	}/*
 	public int deadChicken(){
 		int dead = 0;
 		for (int i = 0;i<listCorral.length ;i++ ) {
