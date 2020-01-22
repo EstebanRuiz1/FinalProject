@@ -69,7 +69,7 @@ public class Presenter{
 		av.fillChicken();
 	}
 	public void dead(){
-	//	int deadChicken = op.countDead();
+		int deadChicken = op.countDead();
 	}
 	public void food(){
 	//	int food = op.countFood();
