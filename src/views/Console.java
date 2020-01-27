@@ -17,10 +17,10 @@ public class Console{
 	public static final String WARP_TIME = "Ingrese A para adelantar el tiempo en dos semanas";
 	public static final String CHICKEN = "Ingrese 1 para llenar los corrales";
 	public static final String CLOSE = "Ingrese 9 para cerrar la aplicación";
-	public static final String GOOD_BYE = "Gracias por usar la aplicación :)";
+	public static final String GOOD_BYE = "Gracias por usar la aplicación :)\n";
 	public static final String BACK  = "Ingrese 6 para volver al menú anterior";
 	public static final String ERROR = "Ingrese una opcion valida";
-	public static final String FULL = "Lista de pollos llena :)";
+	public static final String FULL = "\nLista de pollos llena :)";
 
 	public static final String GET_FIRST_SIZE = "Ingrese 1 para llenar todos los corrales";
 
