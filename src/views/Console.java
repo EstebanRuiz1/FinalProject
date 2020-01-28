@@ -10,7 +10,7 @@ public class Console{
 	public static final String GET_SECOND_OPTION = "Ingrese 2 para añadir revisar la cantidad de aves muertas";
 	public static final String GET_THIRD_OPTION = "Ingrese 3 para revisar la cantidad de purina gastada";
 	public static final String GET_FOUR_OPTION = "Ingrese 4 para revisar la cantidad gastada de cal y cascarilla";
-	public static final String GET_FIVE_OPTION = "Ingrese 5 para V¿ver el gasto en mantenimiento de los galpones";
+	public static final String GET_FIVE_OPTION = "Ingrese 5 para ver el gasto en mantenimiento de los galpones";
 	public static final String GET_SIX_OPTION = "Ingrese 6 para ver el pollo vendido vivo y el pollo vendido muerto";
 	public static final String GET_SEVEN_OPTION = "Ingrese 7 para ver ganancias mesuales";
 	public static final String GET_EIGHT_OPTION = "Ingrese 8 para ver las ganancias anuales";
