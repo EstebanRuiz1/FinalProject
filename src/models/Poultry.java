@@ -4,6 +4,13 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class Poultry{
+	ChickenData expenses;
+
+	private double energy;
+	private double water;
+	private int foodPackage;
+	private int calPackage;
+	private int cascPackage;
 
 	Random ran = new Random();
 	int life = ran.nextInt(99+1);
@@ -15,7 +22,7 @@ public class Poultry{
 	public static final int TOTAL = 3000;
 	public static final int ONE_HUNDRED = 100;
 
-	public Poultry() {
+	public Poultry(ChickenData expenses) {
 		listCorral = new Corral[MAX_CORRAL_NUM];
 		generateCorral();
 	}
@@ -39,7 +46,11 @@ public class Poultry{
 				listCorral[i].setChicken(new Chicken());
 			}
 		}
-	}/*
+	}
+	public void doFoodCount(){
+		 
+	}
+	/*
 	public int deadChicken(){
 		int dead = 0;
 		for (int i = 0;i<listCorral.length ;i++ ) {

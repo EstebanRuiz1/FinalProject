@@ -1,6 +1,9 @@
 package models;
 
 public class Corral {
+
+
+
 	public static final int MAXIUM_CORRAL_FILL = 299;
 	private Chicken[] listChicken;
 	private int counter;

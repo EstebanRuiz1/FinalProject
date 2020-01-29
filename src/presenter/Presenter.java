@@ -72,7 +72,7 @@ public class Presenter{
 	//	int deadChicken = op.countDead();
 	}
 	public void food(){
-	//	int food = op.countFood();
+		av.doFoodCount();
 	}
 	public void calCas(){
 	//	int spendCalCas = op.doCalCasOperation();
