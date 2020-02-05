@@ -1,26 +1,23 @@
-	package presenter;
+package presenter;
 
-import models.Poultry;
-import models.Chicken;
-import models.Poultry;
-import views.Console;
+import models.*;
+import views.IOManager;
 
 
 public class Presenter{
-	private Poultry av;
-	private Console cs;
+	private CorralManager corralObj;
+	private IOManager io;
 
 	public Presenter(){
-		av = new Poultry();
-		cs = new Console();;
+		corralObj = new CorralManager();
+		io = new IOManager();;
 		menu();
 	}
 	
 	public void menu(){
-		byte option = cs.getOption();
+		byte option = io.getOption();
 		switch (option) {
 			case 1:
-				addChicken();
 				showFillChicken();
 				menu();
 			break;
@@ -33,23 +30,23 @@ public class Presenter{
 				menu();
 			break;
 			case 4:
-				calCas();
+				cal();
 				menu();
 			break;
 			case 5:
-				mantainance();
+				cas();
 				menu();
 			break;
 			case 6:
-				sellDeadAndAlive();
+				mantainance();
 				menu();
 			break;
 			case 7:
-				mensualMoney();
+				selledAliveChicken();
 				menu();
 			break;
 			case 8:
-				anualMoney();
+				table();
 				menu();
 			break;
 			case 9:
@@ -62,20 +59,19 @@ public class Presenter{
 		}
 	}
 	public void showFillChicken(){
-		cs.chickenFull();
-	}
-	public void addChicken(){
-	//int chicken = cs.getChicken();
-		av.fillChicken();
+		//io.chickenFull();
 	}
 	public void dead(){
 	//	int deadChicken = op.countDead();
 	}
 	public void food(){
-		av.doFoodCount();
+	//	corralObj.doFoodCount();
 	}
-	public void calCas(){
+	public void cal(){
 	//	int spendCalCas = op.doCalCasOperation();
+	}
+	public void cas(){
+		
 	}
 	public void mantainance(){
 	//	int mantainance = op.getMantainance();
@@ -84,17 +80,14 @@ public class Presenter{
 	//	int alive = op.selledAliveChicken();
 	//	int dead = op.selledDeadChicken();
 	}
-	public void mensualMoney(){
-	//	double mMoney = op.doMensualMoney();
-	}
-	public void anualMoney(){
-	//	double yMoney = op.doAnualMoney();
+	public void tableReport(){
+
 	}
 	public void exitApp(){
-		cs.exitApp();	
+		io.exitApp();	
 	}
 	public void error(){
-		cs.showError();
+		io.showError();
 	}
 	
 }
