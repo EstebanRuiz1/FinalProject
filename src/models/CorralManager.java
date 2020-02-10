@@ -16,6 +16,9 @@ public class CorralManager{
 	public static final int TOTAL = 3000;
 	public static final int ONE_HUNDRED = 100;
 
+	public static final double CAL_VALUE = 9500;
+	public static final double CASC_VALUE = 12000;
+
 	public CorralManager() {
 		corralList = new Corral[MAX_CORRAL_NUM];
 	}
@@ -33,6 +36,14 @@ public class CorralManager{
 	}*/
 	public Corral[] getCorralList(){
 		return this.corralList;
+	}
+	public double determineCashCal(int calBags){
+		double calAux = calBags * CAL_VALUE;
+		return calAux;
+	}
+	public double determineCashCasc(int cascBags){
+		double cascAux = cascBags * CASC_VALUE;
+		return cascAux;
 	}
 	/*
 	public int deadChicken(){

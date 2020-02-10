@@ -68,10 +68,15 @@ public class Presenter{
 	//	corralObj.doFoodCount();
 	}
 	public void cal(){
+		int calBags = io.readCalBags();
+		double calAux = corralObj.determineCashCal( calBags );
+		io.showCashCal( calAux );
 	//	int spendCalCas = op.doCalCasOperation();
 	}
 	public void cas(){
-		
+		int cascBags = io.readCascBags();
+		double cascAux = corralObj.determineCashCasc( cascBags );
+		io.showCashCasc( cascAux );		
 	}
 	public void mantainance(){
 	//	int mantainance = op.getMantainance();
@@ -89,5 +94,4 @@ public class Presenter{
 	public void error(){
 		io.showError();
 	}
-	
 }
