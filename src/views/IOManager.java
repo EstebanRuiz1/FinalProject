@@ -37,7 +37,7 @@ public class IOManager{
 	public static final String GOOD_BYE = "Gracias por usar la aplicación :)\n";
 	public static final String BACK  = "6 para volver al menú anterior";
 	public static final String ERROR = "una opcion valida";
-	public static final String FORMAT_DECIMAL = "$#,###,###";
+	public static final String FORMAT_DECIMAL = "$#,###,###"
 
 	public IOManager(){
 		sc = new Scanner(System.in);
