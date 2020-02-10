@@ -15,7 +15,7 @@ public class IOManager{
 	public static final String GET_FOUR_OPTION = "4 para añadir la cantidad de cal gastada";	
 	public static final String GET_CAL = "Escriba la cantidad de cal gastada en numeros";
 
-	public static final String GET_FIVE_OPTION = "5 para añadir la cantidad de cascarilla gastada";
+	public static final String GET_FIVE_OPTION = "5 para añadir lajh cantidad de cascarilla gastada";
 	public static final String GET_CASCARILLA = "Escriba la cantidad de cascarilla gastada en numeros";
 
 	public static final String GET_SIX_OPTION = "6 para ver el gasto en mantenimiento de los galpones";
