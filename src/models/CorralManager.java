@@ -70,19 +70,11 @@ public class CorralManager{
 		double total = totalChicken - mantainance - purine;
 		return total;
 	}
-		/*Random ran = new Random();
-	}
-	}
-	}
-	private Random Life;
 
-	int valueLife = ran.nextInt(99+1);
-	public void fillChicken(){
+	/*public int chickenAll ( int chickenTotal, int corralList ){
 
-	}
-	public int Chicken(Random ran) {
-		int life = valueLife;
-		return life;
-
+		chikenAux = chickenTotal / corralList;
+		return chikenAux;
 	}*/
+		
 }

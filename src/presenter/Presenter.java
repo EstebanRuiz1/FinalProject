@@ -18,7 +18,7 @@ public class Presenter{
 		byte option = io.getOption();
 		switch (option) {
 			case 1:
-				showFillChicken();
+				addChicken();
 				menu();
 			break;
 			case 2:
@@ -45,7 +45,7 @@ public class Presenter{
 				tableReport();
 				menu();
 			break;
-			case 8:
+			case 0:
 				exitApp();
 			break;
 			default:
@@ -54,8 +54,11 @@ public class Presenter{
 			break;
 		}
 	}
-	public void showFillChicken(){
-		//io.chickenFull();
+	
+	public void addChicken(){
+		int chickenTotal = io.readChickenAll();
+		//int chikenAll = corralObj.chickenAll( chickenTotal );
+
 	}
 	public void dead(){
 		int dead = corralObj.randomDeadChicken();
