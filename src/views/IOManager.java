@@ -11,6 +11,7 @@ public class IOManager{
 	public static final String GET_FIRST_OPTION = "1 para ingresar cantidad pollos y corrales";
 	public static final String CHICKEN_ADD = "Ingrese la cantidad de pollos que desea";
 	public static final String CORRAL_ADD = "Ingrese la cantidad de corrales que desea";
+	public static final String TOTAL_CORRAL = "El total de pollos en corrales es de: %s\n";
 
 	
 	public static final String GET_SECOND_OPTION = "2 para ver la cantidad de aves muertas";
@@ -48,6 +49,7 @@ public class IOManager{
 	public static final String BACK  = "0 para volver al menú anterior";
 	public static final String ERROR = "una opcion valida";
 	public static final String FORMAT_DECIMAL = "$#,###,###";
+	public static final String FORMAT_DECIMAL_CHICKEN = "#,###,###";
 
 	public IOManager(){
 		sc = new Scanner(System.in);
@@ -67,7 +69,16 @@ public class IOManager{
 	
 	public int readChickenAll (){
 		System.out.println(CHICKEN_ADD);
+		return sc.nextInt();
+	}
+	public int readCorralAdd(){
 		System.out.println(CORRAL_ADD);
+		return sc.nextInt();
+	}
+	public int showCorralChickenAdded(double total){
+	DecimalFormat fd = new DecimalFormat( FORMAT_DECIMAL_CHICKEN );
+	System.out.printf(TOTAL_CORRAL, fd.format(total));
+		System.out.println(BACK);
 		return sc.nextInt();
 	}
 

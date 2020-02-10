@@ -57,8 +57,9 @@ public class Presenter{
 	
 	public void addChicken(){
 		int chickenTotal = io.readChickenAll();
-		//int chikenAll = corralObj.chickenAll( chickenTotal );
-
+		int corralAdd = io.readCorralAdd();
+		double total = corralObj.operateAll(chickenTotal, corralAdd);
+		io.showCorralChickenAdded(total);
 	}
 	public void dead(){
 		int dead = corralObj.randomDeadChicken();

@@ -71,10 +71,9 @@ public class CorralManager{
 		return total;
 	}
 
-	/*public int chickenAll ( int chickenTotal, int corralList ){
-
-		chikenAux = chickenTotal / corralList;
+	public double operateAll ( int chickenTotal, int corralList ){
+		double chikenAux = chickenTotal / corralList;
 		return chikenAux;
-	}*/
+	}
 		
 }
