@@ -22,6 +22,9 @@ public class CorralManager{
 	public static Corral addCorral(double energy, double water, int foodPackage, int calPackage, int cascPackage){
 		return new Corral(energy, water, foodPackage, calPackage, cascPackage);
 	}
+	/*public int [] fillChicken(){
+
+	}*/
 
 	/*public void generateCorral() {
 		for (int i = 0; i < corralList.length; i++) {

@@ -2,25 +2,29 @@ package models;
 
 public class Corral {
 
-	private double energy;
+	private double energyCost;
 	private double water;
 	private int foodPackage;
 	private int calPackage;
 	private int cascPackage;
+	private int chickensTotal;
+	private int deadChickens;
+	private int selledChickens;
+	private int chickensAvailable;
 
 	
-	public Corral(double energy, double water, int foodPackage, int calPackage, int cascPackage) {
-		this.energy = energy;
+	public Corral(double energyCost, double water, int foodPackage, int calPackage, int cascPackage) {
+		this.energyCost =energyCost;
 		this.water = water;
 		this.foodPackage = foodPackage;
 		this.calPackage = calPackage;
 		this.cascPackage =cascPackage;
 	}
-	public void setEnergy(double energy){
-		this.energy = energy;
+	public void seenergyCost(double energyCost){
+		this.energyCost =energyCost;
 	}
-	public double getEnergy(){
-		return this.energy ;
+	public double geenergyCost(){
+		return this.energyCost ;
 	}
 
 	public void setWater( double water){
@@ -51,7 +55,7 @@ public class Corral {
 		return this.cascPackage;
 	}
 	public Object[] objectSaver(){
-		return new Object[]{energy, water, foodPackage, calPackage, cascPackage};
+		return new Object[]{energyCost, water, foodPackage, calPackage, cascPackage};
 	}
 
 

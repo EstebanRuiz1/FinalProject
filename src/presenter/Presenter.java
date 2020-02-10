@@ -46,7 +46,7 @@ public class Presenter{
 				menu();
 			break;
 			case 8:
-				table();
+				tableReport();
 				menu();
 			break;
 			case 9:
@@ -76,7 +76,7 @@ public class Presenter{
 	public void mantainance(){
 	//	int mantainance = op.getMantainance();
 	}	
-	public void sellDeadAndAlive(){
+	public void selledAliveChicken(){
 	//	int alive = op.selledAliveChicken();
 	//	int dead = op.selledDeadChicken();
 	}
