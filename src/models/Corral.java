@@ -20,10 +20,10 @@ public class Corral {
 		this.calPackage = calPackage;
 		this.cascPackage =cascPackage;
 	}
-	public void seenergyCost(double energyCost){
+	public void setenergyCost(double energyCost){
 		this.energyCost =energyCost;
 	}
-	public double geenergyCost(){
+	public double getenergyCost(){
 		return this.energyCost ;
 	}
 

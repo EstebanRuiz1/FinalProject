@@ -30,26 +30,18 @@ public class Presenter{
 				menu();
 			break;
 			case 4:
-				cal();
-				menu();
-			break;
-			case 5:
-				cas();
-				menu();
-			break;
-			case 6:
 				mantainance();
 				menu();
 			break;
-			case 7:
+			case 5:
 				selledAliveChicken();
 				menu();
 			break;
-			case 8:
+			case 6:
 				tableReport();
 				menu();
 			break;
-			case 9:
+			case 7:
 				exitApp();
 			break;
 			default:
@@ -62,31 +54,44 @@ public class Presenter{
 		//io.chickenFull();
 	}
 	public void dead(){
-	//	int deadChicken = op.countDead();
+		int dead = corralObj.randomDeadChicken();
+		io.showDeadChicken(dead);
 	}
 	public void food(){
-	//	corralObj.doFoodCount();
-	}
-	public void cal(){
-		int calBags = io.readCalBags();
-		double calAux = corralObj.determineCashCal( calBags );
-		io.showCashCal( calAux );
-	//	int spendCalCas = op.doCalCasOperation();
-	}
-	public void cas(){
-		int cascBags = io.readCascBags();
-		double cascAux = corralObj.determineCashCasc( cascBags );
-		io.showCashCasc( cascAux );		
+		int foodPackage = io.getPurine();
+		double foodSpend = corralObj.determinePurineValue(foodPackage);
+		io.showPurineSpend(foodSpend); 
 	}
 	public void mantainance(){
-	//	int mantainance = op.getMantainance();
+		int cascBags = io.readCascBags();
+		int calBags = io.readCalBags();
+		double calAux = corralObj.determineCashCal( calBags );
+		double cascAux = corralObj.determineCashCasc( cascBags );
+		double mantainance = corralObj.totalCost(calAux, cascAux);
+		io.showMantainance(mantainance, cascAux, calAux);
 	}	
 	public void selledAliveChicken(){
-	//	int alive = op.selledAliveChicken();
-	//	int dead = op.selledDeadChicken();
+		int dead = corralObj.randomDeadChicken();
+		int totalAlive = corralObj.aliveChicken(dead);
+		double totalCost = corralObj.totalCostAliveChicken(totalAlive);
+		io.showAliveReport(totalAlive, totalCost);
 	}
 	public void tableReport(){
+		/*int dead = corralObj.randomDeadChicken();
+		int totalAlive = corralObj.aliveChicken(dead);
+		double totalCost = corralObj.totalCostAliveChicken(totalAlive);
 
+		int cascBags = io.readCascBags();
+		int calBags = io.readCalBags();
+		double calAux = corralObj.determineCashCal( calBags );
+		double cascAux = corralObj.determineCashCasc( cascBags );
+		double mantainance = corralObj.totalCost(calAux, cascAux);
+
+		int foodPackage = io.getPurine();
+		double foodSpend = corralObj.determinePurineValue(foodPackage);
+
+		double totalProfit = corralObj.costTotal(totalCost, mantainance, foodSpend);
+		System.out.println(totalProfit);*/
 	}
 	public void exitApp(){
 		io.exitApp();	
