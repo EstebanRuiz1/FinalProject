@@ -28,14 +28,14 @@ public class IOManager{
 
 	public static final String GET_CASCARILLA = "Escriba la cantidad de cascarilla gastada en numeros";
 
-	public static final String GET_SIX_OPTION = "4 para ver el gasto en mantenimiento de los galpones";
+	public static final String GET_FOUR_OPTION = "4 para ver el gasto en mantenimiento de los galpones";
 	public static final String MESSAGE_TOTAL_COST = "El gasto total de mantenimieto es de: %s\n";
 
-	public static final String GET_SEVEN_OPTION = "5 para ver el pollo vivo";
+	public static final String GET_FIVE_OPTION = "5 para ver el pollo vivo";
 	public static final String TOTAL_ALIVE = "EL total de pollos vivos es de: %s\n";
 	public static final String TOTAL_COST_CHICKEN = "El total monetario de pollos es de: %s\n";
 
-	public static final String GET_EIGHT_OPTION = "6 para ver la tabla de reportes completa";
+	public static final String GET_SIX_OPTION = "6 para ver la tabla de reportes completa";
 
 	public static final String FORMAT =  "%1$-25s %2$-20s %3$-20s %4$-20s %5$-15s %6$-15s %7$-15s %8$-15s ";
 	public static final String CLOSE = "7 para cerrar la aplicación";
@@ -52,9 +52,9 @@ public class IOManager{
 		System.out.println(GET_FIRST_OPTION);
 		System.out.println(GET_SECOND_OPTION);
 		System.out.println(GET_THIRD_OPTION);
+		System.out.println(GET_FOUR_OPTION);
+		System.out.println(GET_FIVE_OPTION);
 		System.out.println(GET_SIX_OPTION);
-		System.out.println(GET_SEVEN_OPTION);
-		System.out.println(GET_EIGHT_OPTION);
 		System.out.println(CLOSE);
 		return sc.nextByte();
 	}
