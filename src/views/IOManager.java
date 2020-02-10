@@ -33,12 +33,13 @@ public class IOManager{
 
 	public static final String GET_FIVE_OPTION = "5 para ver el pollo vivo";
 	public static final String TOTAL_ALIVE = "EL total de pollos vivos es de: %s\n";
+	public static final String GET_SIX_OPTION = "6 para obtener el total monetario de pollos";
 	public static final String TOTAL_COST_CHICKEN = "El total monetario de pollos es de: %s\n";
 
-	public static final String GET_SIX_OPTION = "6 para ver la tabla de reportes completa";
+	public static final String GET_SEVEN_OPTION = "7 para ver la tabla de reportes completa";
 
 	public static final String FORMAT =  "%1$-25s %2$-20s %3$-20s %4$-20s %5$-15s %6$-15s %7$-15s %8$-15s ";
-	public static final String CLOSE = "7 para cerrar la aplicación";
+	public static final String CLOSE = "8 para cerrar la aplicación";
 	public static final String GOOD_BYE = "Gracias por usar la aplicación :)\n";
 	public static final String BACK  = "0 para volver al menú anterior";
 	public static final String ERROR = "una opcion valida";
@@ -55,6 +56,7 @@ public class IOManager{
 		System.out.println(GET_FOUR_OPTION);
 		System.out.println(GET_FIVE_OPTION);
 		System.out.println(GET_SIX_OPTION);
+		System.out.println(GET_SEVEN_OPTION);
 		System.out.println(CLOSE);
 		return sc.nextByte();
 	}
@@ -102,11 +104,17 @@ public class IOManager{
 		System.out.println(BACK);
 		return sc.nextInt();
 	}
-	public int showAliveReport(int aliveTotal, double money){
-		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
+	public int showAliveReport(int aliveTotal){
+		//DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
 		System.out.printf(TOTAL_ALIVE, aliveTotal);
+		//System.out.printf(TOTAL_COST_CHICKEN, df.format(money));
+		System.out.println(BACK);
+		return sc.nextInt();
+	}
+	public double showChickenSellReport(double money){
+		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
 		System.out.printf(TOTAL_COST_CHICKEN, df.format(money));
 		System.out.println(BACK);
 		return sc.nextInt();
-	}	
+	}
 }

@@ -34,14 +34,18 @@ public class Presenter{
 				menu();
 			break;
 			case 5:
-				selledAliveChicken();
+				aliveChicken();
 				menu();
 			break;
 			case 6:
-				tableReport();
+				sellChiken();
 				menu();
 			break;
 			case 7:
+				tableReport();
+				menu();
+			break;
+			case 8:
 				exitApp();
 			break;
 			default:
@@ -70,11 +74,17 @@ public class Presenter{
 		double mantainance = corralObj.totalCost(calAux, cascAux);
 		io.showMantainance(mantainance, cascAux, calAux);
 	}	
-	public void selledAliveChicken(){
+	public void aliveChicken(){
+		int dead = corralObj.randomDeadChicken();
+		int totalAlive = corralObj.aliveChicken(dead);
+		io.showAliveReport(totalAlive);
+	}
+	public void sellChiken(){
+
 		int dead = corralObj.randomDeadChicken();
 		int totalAlive = corralObj.aliveChicken(dead);
 		double totalCost = corralObj.totalCostAliveChicken(totalAlive);
-		io.showAliveReport(totalAlive, totalCost);
+		io.showChickenSellReport( totalCost );
 	}
 	public void tableReport(){
 		/*int dead = corralObj.randomDeadChicken();
