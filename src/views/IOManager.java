@@ -43,13 +43,24 @@ public class IOManager{
 
 	public static final String GET_SEVEN_OPTION = "7 Para ver la tabla de reportes completa";
 
-	public static final String FORMAT =  "%1$-25s %2$-20s %3$-20s %4$-20s %5$-15s %6$-15s %7$-15s %8$-15s ";
+	//public static final String FORMAT =  "%1$-25s %2$-20s %3$-20s %4$-20s %5$-15s %6$-15s %7$-15s %8$-15s ";
 	public static final String CLOSE = "0 para cerrar la aplicación";
 	public static final String GOOD_BYE = "Gracias por usar la aplicación :)\n";
 	public static final String BACK  = "0 Para volver al menú anterior";
 	public static final String ERROR = "una opcion valida";
 	public static final String FORMAT_DECIMAL = "$#,###,###";
 	public static final String FORMAT_DECIMAL_CHICKEN = "#,###,###";
+
+	public static final String CHICKEN_RACE = "Raza del pollo";
+	public static final String FOOD_PACKAGE = "Bultos de purina";
+	public static final String CAL_PACKAGE = "Bultos de cal";
+	public static final String CASC_PACKAGE = "Bultos de cascarilla";
+	public static final String CHICKEN_TOTAL = "Total de pollos vivos";
+	public static final String DEAD_CHICKEN = "Total de pollos muertos";
+
+	public static final String FORMAT = "%1$-25s %2$-20s %3$-20s %4$-20s %5$-15s %6$-15s";
+	public static final Object[] HEADERS = { CHICKEN_RACE, FOOD_PACKAGE, CAL_PACKAGE, CASC_PACKAGE, CHICKEN_TOTAL, DEAD_CHICKEN };
+	
 
 	public IOManager(){
 		sc = new Scanner(System.in);
@@ -66,7 +77,20 @@ public class IOManager{
 		System.out.println(CLOSE);
 		return sc.nextByte();
 	}
-	
+
+	public void generateHeader() {
+		System.out.println( String.format(FORMAT, HEADERS ));
+		System.out.println("------------------------------------------------------------------------------------------------------------------------------");
+	}
+	public void showListDatas( Object[][] datasList ) {
+		System.out.println();
+		System.out.println();
+		generateHeader();
+		for (int i = 0; i < datasList.length; i++ ){
+			Object[] datasObject = datasList[i];
+			System.out.println( String.format( FORMAT, datasObject ));
+		}
+	}
 	public int readChickenAll (){
 		System.out.println(CHICKEN_ADD);
 		return sc.nextInt();
@@ -132,14 +156,5 @@ public class IOManager{
 		System.out.println(BACK);
 		return sc.nextInt();
 	}
-	public void showListDatas( Object[][] datasList ) {
-		System.out.println();
-		System.out.println();
-		generateHeader();
-		for (int i = 0; i < datasList.length; i++ ){
-			Object[] datasObject = datasList[i];
-			System.out.println( String.format( FORMAT, datasObject ));
-		}
-	}
-	
 }
+
