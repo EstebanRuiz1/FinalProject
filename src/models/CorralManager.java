@@ -6,7 +6,7 @@ import java.util.Random;
 public class CorralManager{
 
 	private Corral[] corralList;
-	public static final int MAX_CORRAL_NUM = 9;
+	public static final int MAX_CORRAL_NUM = 30;
 
 	public static final int MAXIUM_CORRAL_FILL = 299;
 	public static final int DEAD_PARAMETER = 10;
@@ -23,16 +23,39 @@ public class CorralManager{
 	public static final double PURINE_PACKAGE_VALUE = 69000;
 	public static final double CHICKEN_VALUE = 4000;
 
+	private int top;
+
 	public CorralManager() {
 		corralList = new Corral[MAX_CORRAL_NUM];
 	}
-	public static Corral addCorral(double energy, double water, int foodPackage, int calPackage, int cascPackage){
-		return new Corral(energy, water, foodPackage, calPackage, cascPackage);
+
+		public boolean addCorral(Corral corralObj){
+		if( top < corralList.length ){
+			corralList[top] = corralObj;
+			top++;
+			return true;
+		}else{
+			return false;
+		}	
 	}
 
+	public int getTop(){
+		return this.top;
+	}
+	
 	public Corral[] getCorralList(){
 		return this.corralList;
 	}
+
+	public Object[][] toMatrixVector(){
+		int sizeColumns = corralList[0].objectSaver().length;
+		Object[][] datasMatrix = new Object[top][sizeColumns];
+		for (int i = 0; i < datasMatrix.length; i++) {
+			datasMatrix[i] = corralList[i].objectSaver();
+		}
+		return datasMatrix;
+	}
+
 	public double determineCashCal(int calBags){
 		double calAux = calBags * CAL_VALUE;
 		return calAux;

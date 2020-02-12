@@ -2,37 +2,30 @@ package models;
 
 public class Corral {
 
-	private double energyCost;
-	private double water;
 	private int foodPackage;
 	private int calPackage;
 	private int cascPackage;
-	private int chickensTotal;
+	private int chickenTotal;
 	private int deadChickens;
-	private int selledChickens;
-	private int chickensAvailable;
+	private ChickenType chickenType;
+		
 
 	
-	public Corral(double energyCost, double water, int foodPackage, int calPackage, int cascPackage) {
-		this.energyCost =energyCost;
-		this.water = water;
+	public Corral( ChickenType chickenType, int foodPackage, int calPackage, int cascPackage, int chickenTotal, int deadChickens) {
+		this.chickenType = chickenType;
 		this.foodPackage = foodPackage;
 		this.calPackage = calPackage;
-		this.cascPackage =cascPackage;
+		this.cascPackage = cascPackage;
+		this.chickenTotal = chickenTotal;
+		this.deadChickens = deadChickens;
 	}
-	public void setenergyCost(double energyCost){
-		this.energyCost =energyCost;
+	public void setChickenType(ChickenType chickenType){
+		this.chickenType = chickenType;
 	}
-	public double getenergyCost(){
-		return this.energyCost ;
+	public ChickenType getChickenType(){
+		return this.chickenType;
 	}
-
-	public void setWater( double water){
-		this.water = water;
-	}
-	public double getWater( ){
-		return this.water ;
-	}
+	
 
 	public void setFoodPackage(int foodPackage){
 		this.foodPackage = foodPackage;
@@ -45,7 +38,7 @@ public class Corral {
 		this.calPackage = calPackage;
 	}
 	public int getCalPackage(){
-		return this.calPackage ;
+		return this.calPackage;
 	}
 
 	public void setCascPackage(int cascPackage){
@@ -54,8 +47,24 @@ public class Corral {
 	public int getCascPackage(){
 		return this.cascPackage;
 	}
+	
+	public int setChickensTotal(int chickensTotal){
+		return this.chickenTotal = chickenTotal;
+	}
+	
+	public int getChickensTotal(){
+		return this.chickenTotal;
+	}
+	
+	public int setDeadChikens(int deadChickens){
+		return this.deadChickens = deadChickens;
+	}
+	public int getDeadChikens(){
+		return this.deadChickens;
+	}
+	
 	public Object[] objectSaver(){
-		return new Object[]{energyCost, water, foodPackage, calPackage, cascPackage};
+		return new Object[]{chickenType.getLabel(), foodPackage, calPackage, cascPackage, chickenTotal, deadChickens};
 	}
 
 
