@@ -17,8 +17,8 @@ public class IOManager{
 															"1 Para ver el gasto total de cal\n"+
 															"2 Para ver el gasto total de cascarilla\n"+
 															"3 Para ver el gasto total de purina\n"+
-															"4 Para ver el gasto de energia\n"+
-															"5 Para ver el gasto de agua\n"+
+															"4 Para ver el gasto de agua\n"+
+															"5 Para ver el gasto de luz\n"+
 															"6 Para ver los pollos muertos\n"+
 															"7 Para ver los pollos vivos\n"+
 															"8 Para el valor total de los pollos vivos\n"+
