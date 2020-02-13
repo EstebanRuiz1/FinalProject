@@ -8,12 +8,6 @@ public class CorralManager{
 	private Corral[] corralList;
 	public static final int MAX_CORRAL_NUM = 30;
 
-	public static final int MAXIUM_CORRAL_FILL = 299;
-	public static final int DEAD_PARAMETER = 10;
-	public static final int KILL_PARAMETER = 50;
-	public static final int TOTAL = 3000;
-	public static final int ONE_HUNDRED = 100;
-
 	public static final double CAL_VALUE = 9500;
 	public static final double CASC_VALUE = 12000;
 
@@ -55,48 +49,55 @@ public class CorralManager{
 		}
 		return datasMatrix;
 	}
-
-	public double determineCashCal(int calBags){
-		double calAux = calBags * CAL_VALUE;
-		return calAux;
+	public double sendWaterCost(){
+		double waterCost = WATER_COST;
+		return waterCost;
 	}
-	public double determineCashCasc(int cascBags){
-		double cascAux = cascBags * CASC_VALUE;
-		return cascAux;
-	}
-	public double totalCost(double calAux, double cascAux){
-		double total = calAux + cascAux + WATER_COST + ENERGY_COST;
-		return total;
+	public double sendEnergyCost(){
+		double energyCost = ENERGY_COST;
+		return energyCost;
 	}
 	public double determinePurineValue(int purinePackage){
 		double totalPurine = purinePackage * PURINE_PACKAGE_VALUE;
 		return totalPurine;
 	}
-	public int randomDeadChicken(){
-		Random ran = new Random();
-		int deadAux = 0;
-		int dead = ran.nextInt(DEAD_PARAMETER);
-		for (int i = 0;i <MAX_CORRAL_NUM ; i++) {
-			deadAux += dead;
+	public int totalDeadChicken(){
+		int totalDead = 0;
+		for (int i = 0;(i<corralList.length) && (corralList[i]) != null;i++ ) {
+			totalDead += corralList[i].getDeadChikens();
 		}
-		return deadAux;
-	}
-	public int aliveChicken(int dead){
-		int aliveAux = (TOTAL * DEAD_PARAMETER) - dead;
-		return aliveAux;
+		return totalDead;
 	}	
+	public int totalAliveChicken(int deadChickens){
+		int totalAlive = 0;
+		for (int i = 0;(i<corralList.length) && (corralList[i]) != null;i++ ) {
+			totalAlive += corralList[i].getChickensTotal();
+		}
+		return totalAlive - deadChickens;
+	}
+	public double getTotalCal(){
+		double totalCal = 0;
+		for (int i = 0;(i<corralList.length) && (corralList[i]) != null;i++ ) {
+			totalCal += corralList[i].getCalPackage();
+		}
+		return totalCal * CAL_VALUE;
+	}	
+	public double getTotalCasc(){
+		double totalCasc = 0;
+		for (int i = 0;(i<corralList.length) && (corralList[i]) != null;i++ ) {
+			totalCasc += corralList[i].getCascPackage();
+		}
+		return totalCasc * CASC_VALUE;
+	}
+	public double getTotalPurine(){
+		double totalPurine = 0;
+		for (int i = 0;(i<corralList.length) && (corralList[i]) != null;i++ ) {
+			totalPurine += corralList[i].getFoodPackage();
+		}
+		return totalPurine * PURINE_PACKAGE_VALUE;
+	}
 	public double totalCostAliveChicken(int aliveAux){
 		double totalCost = aliveAux * CHICKEN_VALUE;
 		return totalCost;
-	}
-	public double costTotal(double totalChicken, double mantainance, double purine){
-		double total = totalChicken - mantainance - purine;
-		return total;
-	}
-
-	public double operateAll ( int chickenTotal, int corralList ){
-		double chikenAux = chickenTotal / corralList;
-		return chikenAux;
-	}
-		
+	}	
 }
