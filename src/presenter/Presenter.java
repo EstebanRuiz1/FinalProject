@@ -72,7 +72,7 @@ public class Presenter{
 					initApp();
 				break;
 			}
-		}while(option != 9 );
+		}while(option != 10 );
 	}
 	private void manageAddCorral() {
 		
