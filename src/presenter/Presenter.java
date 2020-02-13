@@ -43,9 +43,11 @@ public class Presenter{
 				menu();
 			break;
 			case 7:
-				tableReport();
-				menu();
+				manageAddCorral();
+				//menu();
 			break;
+			case 8:
+				io.showListDatas( corralManagerObj.toMatrixVector() );
 			case 0:
 				exitApp();
 			break;
@@ -67,7 +69,7 @@ public class Presenter{
 		io.showDeadChicken(dead);
 	}
 	public void food(){
-		int foodPackage = io.getPurine();
+		int foodPackage = io.readPurine();
 		double foodSpend = corralManagerObj.determinePurineValue(foodPackage);
 		io.showPurineSpend(foodSpend); 
 	}
@@ -113,9 +115,21 @@ public class Presenter{
 	private void initApp() {
 		createCorrals();
 
-		io.showListDatas( corralManagerObj.toMatrixVector() );
+		//io.showListDatas( corralManagerObj.toMatrixVector() );
 	}
-
+	private void manageAddCorral() {
+		
+		ChickenType chickenType = io.readChickenType();
+		int foodPackage = io.readPurine();
+		int calPackage = io.readCalBags();
+		int cascPackage = io.readCascBags();
+		int chickenTotal = io.readChickenAll();
+		int deadChickens = io.readCorralAdd();
+		
+		
+		Corral corral = new Corral( chickenType, foodPackage, calPackage, cascPackage, chickenTotal, deadChickens );
+		corralManagerObj.addCorral( corral );	
+	}
 	private void createCorrals() {
 
 		Corral corralOne = new Corral( ChickenType.CHICKEN_ONE ,15, 6, 7, 800, 20);

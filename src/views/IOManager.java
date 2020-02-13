@@ -2,6 +2,7 @@ package views;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;
+import models.ChickenType;
 
 public class IOManager{
 	private Scanner sc;
@@ -41,7 +42,12 @@ public class IOManager{
 	public static final String GET_SIX_OPTION = "6 Para obtener el total monetario de pollos";
 	public static final String TOTAL_COST_CHICKEN = "El total monetario de pollos es de: %s\n";
 
-	public static final String GET_SEVEN_OPTION = "7 Para ver la tabla de reportes completa";
+	public static final String GET_SEVEN_OPTION = "7 para agregar nuevo corral de pollos";
+	public static final String MESSAGE_READ_CHICKEN_RACE = "Ingrese el tipo de raza de pollo \n"+
+																"1. Pollos Ecuatorianos \n" + 
+																"2. Pollos Blancos \n" + 
+																"3. Polla Negra \n";
+	public static final String GET_EIGHT_OPTION = "8 para ver datos por corral";
 
 	//public static final String FORMAT =  "%1$-25s %2$-20s %3$-20s %4$-20s %5$-15s %6$-15s %7$-15s %8$-15s ";
 	public static final String CLOSE = "0 para cerrar la aplicación";
@@ -74,6 +80,7 @@ public class IOManager{
 		System.out.println(GET_FIVE_OPTION);
 		System.out.println(GET_SIX_OPTION);
 		System.out.println(GET_SEVEN_OPTION);
+		System.out.println(GET_EIGHT_OPTION);
 		System.out.println(CLOSE);
 		return sc.nextByte();
 	}
@@ -82,15 +89,30 @@ public class IOManager{
 		System.out.println( String.format(FORMAT, HEADERS ));
 		System.out.println("------------------------------------------------------------------------------------------------------------------------------");
 	}
-	public void showListDatas( Object[][] datasList ) {
+	public void showListDatas( Object[][] listCorralData ) {
 		System.out.println();
 		System.out.println();
 		generateHeader();
-		for (int i = 0; i < datasList.length; i++ ){
-			Object[] datasObject = datasList[i];
+		for (int i = 0; i < listCorralData.length; i++ ){
+			Object[] datasObject = listCorralData[i];
 			System.out.println( String.format( FORMAT, datasObject ));
 		}
 	}
+	public ChickenType readChickenType(){
+		System.out.println( MESSAGE_READ_CHICKEN_RACE );
+		String raceSelected = sc.nextLine();
+		switch( raceSelected ) {
+			case "1":
+				return ChickenType.CHICKEN_ONE;
+			case "2":
+				return ChickenType.CHICKEN_TWO;
+			case "3":
+				return ChickenType.CHICKEN_THREE;
+			default:
+				return ChickenType.CHICKEN_ONE;
+		}
+	}
+
 	public int readChickenAll (){
 		System.out.println(CHICKEN_ADD);
 		return sc.nextInt();
@@ -135,7 +157,7 @@ public class IOManager{
 		System.out.println(BACK);
 		return sc.nextInt();
 	}
-	public int getPurine(){
+	public int readPurine(){
 		System.out.println(GET_PURINE);
 		return sc.nextInt();
 	}
