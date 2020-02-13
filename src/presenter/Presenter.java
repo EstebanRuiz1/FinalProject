@@ -63,13 +63,16 @@ public class Presenter{
 					showAlive();
 				break;
 				case 8:
-					initApp();
+					showSelledChicken();
 				break;
 				case 9:
-
+					totalReport();
+				break;
+				case 10:
+					initApp();
 				break;
 			}
-		}while(option != 4 );
+		}while(option != 9 );
 	}
 	private void manageAddCorral() {
 		
@@ -78,7 +81,7 @@ public class Presenter{
 		int calPackage = io.readCalBags();
 		int cascPackage = io.readCascBags();
 		int chickenTotal = io.readChickenAll();
-		int deadChickens = io.showDeadChicken();
+		int deadChickens = io.readDeadChicken();
 		
 		
 		Corral corral = new Corral( chickenType, foodPackage, calPackage, cascPackage, chickenTotal, deadChickens );
@@ -112,6 +115,31 @@ public class Presenter{
 		int totalDead = corralManagerObj.totalDeadChicken();
 		int totalAlive = corralManagerObj. totalAliveChicken(totalDead);
 		io.showAlive(totalAlive);
+	}
+	private void showSelledChicken(){
+		int totalDead = corralManagerObj.totalDeadChicken();
+		int totalAlive = corralManagerObj. totalAliveChicken(totalDead);		
+		double selledChicken = corralManagerObj.setSelledChicken(totalAlive);
+		io.showSelledChicken(selledChicken);
+	}
+	private void totalReport(){
+		int totalDead = corralManagerObj.totalDeadChicken();
+		int totalAlive = corralManagerObj. totalAliveChicken(totalDead);		
+		double selledChicken = corralManagerObj.setSelledChicken(totalAlive);
+
+		double totalCal = corralManagerObj.getTotalCal();
+
+		double totalCas = corralManagerObj.getTotalCasc();
+
+		double totalPurine = corralManagerObj.getTotalPurine();
+
+		double totalWater =  corralManagerObj.sendWaterCost();
+
+		double totalEnergy = corralManagerObj.sendEnergyCost();
+
+		double finalReport = corralManagerObj.finalReport(selledChicken, totalCal, totalCas, totalPurine, totalWater, totalEnergy);
+		String winOrLose = corralManagerObj.decideProfitOrLoose(finalReport);
+		io.showFinalReport(winOrLose, finalReport); 
 	}
 	private void createCorrals() {
 

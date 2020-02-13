@@ -96,8 +96,22 @@ public class CorralManager{
 		}
 		return totalPurine * PURINE_PACKAGE_VALUE;
 	}
-	public double totalCostAliveChicken(int aliveAux){
-		double totalCost = aliveAux * CHICKEN_VALUE;
+	public double setSelledChicken(int totalChicken){
+		double totalCost = totalChicken * CHICKEN_VALUE;
 		return totalCost;
+	}
+	public double finalReport(double selledChicken, double totalCal, double totalCas, double totalPurine, double totalWater, double totalEnergy){
+		double totalReport = selledChicken - (totalCal + totalCas + totalPurine + totalWater + totalEnergy);
+		return totalReport;
 	}	
+	public String decideProfitOrLoose(double finalCost){
+		String result = "";
+		if (finalCost > 0) {
+			result = "Ganancias";			
+		}
+		else{
+			result = "Perdidas";
+		}
+		return result;
+	}
 }

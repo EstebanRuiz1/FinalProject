@@ -20,13 +20,18 @@ public class IOManager{
 															"4 Para ver el gasto de energia\n"+
 															"5 Para ver el gasto de agua\n"+
 															"6 Para ver los pollos muertos\n"+
-															"7 Para ver los pollos vivos";  
+															"7 Para ver los pollos vivos\n"+
+															"8 Para el valor total de los pollos vivos\n"+
+															"9 Para ver si obtuvo ganancias o si genero perdidas\n"+ 
+															"10 Para volver al menu anterior";  
 
 	public static final String MESSAGE_READ_CHICKEN_RACE = "Ingrese el tipo de raza de pollo \n"+
 															"1. Pollos Ecuatorianos \n" + 
 															"2. Pollos Blancos \n" + 
-															"3. Polla Negra \n";		
+															"3. Polla Negra \n";	
 
+	public static final String MESSAGE_FINAL_REPORT = "Usted tuvo %s \n";
+	public static final String MESSAGE_FINAL_VALUE = "con un valor acumulado de: %S\n";	
 	public static final String MESSAGE_RESULT_CASC = "El total de gasto monetario en cascarilla es de: %s\n";	
 	public static final String MESSAGE_ENERGY = "La cantidad gastada de energia es: %s\n";
 	public static final String MESSAGE_WATER = "La cantidad gastada de agua es: %s\n";
@@ -39,7 +44,7 @@ public class IOManager{
 	public static final String GET_CASC_BAGS = "Ingrese la cantidad de cascarilla en paca";
 	public static final String GET_CASCARILLA = "Escriba la cantidad de cascarilla gastada en numeros";
 	public static final String GET_PURINE = "Escriba la cantidad de purina en bultos gastada en el mes";
-	public static final String GET_TOTAL_DEAD = "Ingrese el total de pollos muertos:";
+	public static final String GET_TOTAL_DEAD = "Ingrese el total de pollos muertos:\n";
 
 	public static final String TOTAL_ALIVE = "EL total de pollos vivos es de: %s\n";
 	public static final String TOTAL_DEAD = "El total de pollos muertos es de: %s\n";	
@@ -60,7 +65,7 @@ public class IOManager{
 	public static final String CHICKEN_TOTAL = "Total de pollos vivos";
 	public static final String DEAD_CHICKEN = "Total de pollos muertos";
 
-	public static final String FORMAT = "%1$-25s %2$-20s %3$-20s %4$-20s %5$-15s %6$-15s";
+	public static final String FORMAT = "%1$-25s %2$-20s %3$-20s %4$-25s %5$-30s %6$-15s";
 	public static final Object[] HEADERS = { CHICKEN_RACE, FOOD_PACKAGE, CAL_PACKAGE, CASC_PACKAGE, CHICKEN_TOTAL, DEAD_CHICKEN };
 	
 
@@ -105,12 +110,23 @@ public class IOManager{
 		System.out.println(GET_CHICKEN_ADD);
 		return Integer.parseInt(sc.nextLine());
 	}
-	public int showCorralChickenAdded(double total){
-	DecimalFormat fd = new DecimalFormat( FORMAT_DECIMAL_CHICKEN );
-	System.out.printf(TOTAL_CORRAL, fd.format(total));
-		System.out.println(BACK);
+
+	public int readCalBags(){
+		System.out.println(GET_CAL_BAGS);
 		return Integer.parseInt(sc.nextLine());
 	}
+	public int readCascBags(){
+		System.out.println(GET_CASC_BAGS);
+		return Integer.parseInt(sc.nextLine());
+	}
+	public int readPurine(){
+		System.out.println(GET_PURINE);
+		return Integer.parseInt(sc.nextLine());
+	}
+	public byte readOptionMenuReports(){
+		System.out.println( MESSAGE_READ_MENU_REPORTS );
+		return Byte.parseByte( sc.nextLine() );
+	}	
 	public void showCal(double cal){
 		DecimalFormat fd = new DecimalFormat( FORMAT_DECIMAL_CHICKEN );
 		System.out.printf(MESSAGE_RESULT_CAL, fd.format(cal));
@@ -137,49 +153,18 @@ public class IOManager{
 	public void showAlive(int alive){
 		System.out.printf(TOTAL_ALIVE, alive);
 	}
-	public int showDeadChicken(){
+	public int readDeadChicken(){
 		System.out.printf(GET_TOTAL_DEAD);
-		System.out.println(BACK);
 		return Integer.parseInt(sc.nextLine());
 	}
-	public void exitApp(){
-		System.out.println(GOOD_BYE);
+	public int showCorralChickenAdded(double total){
+	DecimalFormat fd = new DecimalFormat( FORMAT_DECIMAL_CHICKEN );
+	System.out.printf(TOTAL_CORRAL, fd.format(total));
+		System.out.println(BACK);
+		return Integer.parseInt(sc.nextLine());
 	}
 	public void showError(){
 		System.out.println(ERROR);
-	}
-	public int readCalBags(){
-		System.out.println(GET_CAL_BAGS);
-		return Integer.parseInt(sc.nextLine());
-	}
-	public int readCascBags(){
-		System.out.println(GET_CASC_BAGS);
-		return Integer.parseInt(sc.nextLine());
-	}
-	public int showMantainance(double totalCost, double cascAux, double calAux){
-		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
-		System.out.printf(MESSAGE_RESULT_CASC,df.format(cascAux));
-		System.out.printf(MESSAGE_RESULT_CAL, df.format(calAux));
-		System.out.printf(MESSAGE_ENERGY);
-		System.out.printf(MESSAGE_WATER);
-		System.out.printf(MESSAGE_TOTAL_COST, df.format(totalCost));
-		System.out.println(BACK);
-		return Integer.parseInt(sc.nextLine());
-	}
-	public int readPurine(){
-		System.out.println(GET_PURINE);
-		return Integer.parseInt(sc.nextLine());
-	}
-	public int showPurineSpend(double purineTotal){
-		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
-		System.out.printf(TOTAL_PURINE, df.format(purineTotal));
-		System.out.println(BACK);
-		return Integer.parseInt(sc.nextLine());
-	}
-	public int showAliveReport(int aliveTotal){
-		System.out.printf(TOTAL_ALIVE, aliveTotal);
-		System.out.println(BACK);
-		return Integer.parseInt(sc.nextLine());
 	}
 	public double showChickenSellReport(double money){
 		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
@@ -187,9 +172,18 @@ public class IOManager{
 		System.out.println(BACK);
 		return Integer.parseInt(sc.nextLine());
 	}
-	public byte readOptionMenuReports(){
-		System.out.println( MESSAGE_READ_MENU_REPORTS );
-		return Byte.parseByte( sc.nextLine() );
+	public void showSelledChicken(double selledChicken){
+		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
+		System.out.printf(TOTAL_COST_CHICKEN, df.format(selledChicken));		
 	}
+	public void showFinalReport(String result, double total){
+		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
+		System.out.printf(MESSAGE_FINAL_REPORT, result);
+		System.out.printf(MESSAGE_FINAL_VALUE, df.format(total));
+	}
+	public void exitApp(){
+		System.out.println(GOOD_BYE);
+	}
+
 }
 
