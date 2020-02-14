@@ -8,6 +8,8 @@ public class CorralManager{
 	private Corral[] corralList;
 	public static final int MAX_CORRAL_NUM = 30;
 
+	public static final int PERCENTAGE =  100;
+
 	public static final double CAL_VALUE = 9500;
 	public static final double CASC_VALUE = 12000;
 
@@ -61,14 +63,14 @@ public class CorralManager{
 		double totalPurine = purinePackage * PURINE_PACKAGE_VALUE;
 		return totalPurine;
 	}
-	public int totalDeadChicken(){
+	public int determineTotalDeadChicken(){
 		int totalDead = 0;
 		for (int i = 0;(i<corralList.length) && (corralList[i]) != null;i++ ) {
 			totalDead += corralList[i].getDeadChikens();
 		}
 		return totalDead;
 	}	
-	public int totalAliveChicken(int deadChickens){
+	public int determineTotalAliveChicken(int deadChickens){
 		int totalAlive = 0;
 		for (int i = 0;(i<corralList.length) && (corralList[i]) != null;i++ ) {
 			totalAlive += corralList[i].getChickensTotal();
@@ -100,11 +102,31 @@ public class CorralManager{
 		double totalCost = totalChicken * CHICKEN_VALUE;
 		return totalCost;
 	}
-	public double finalReport(double selledChicken, double totalCal, double totalCas, double totalPurine, double totalWater, double totalEnergy){
+	public double determineFinalReport(double selledChicken, double totalCal, double totalCas, double totalPurine, double totalWater, double totalEnergy){
 		double totalReport = selledChicken - (totalCal + totalCas + totalPurine + totalWater + totalEnergy);
 		return totalReport;
 	}	
-	public String decideProfitOrLoose(double finalCost){
+	public double[] calculateRaceChicken(){
+		ChickenType[] chickenType = ChickenType.values();
+		double[] chickenRaceList = new double[chickenType.length];
+		for (int i = 0;i<chickenType.length ;i++ ) {
+			chickenRaceList[i] = calculatePercentageChicken(chickenType[i]);
+		}
+		return chickenRaceList;
+	}
+	public double calculatePercentageChicken(ChickenType chickenType){
+		double counterChickenRace = 0;
+		for (int i = 0;i<corralList.length && corralList[i] != null ;i++ ) {
+			if (chickenType.equals(corralList[i].getChickenType())) {
+			counterChickenRace++;							
+			}			
+		}
+		return (counterChickenRace * PERCENTAGE) / top;
+	}
+	public Object[] toParseObject(double[] percentageRace){
+		return new Object[]{percentageRace[0], percentageRace[1],percentageRace[2]};
+	}
+	public String validateProfitOrLoose(double finalCost){
 		String result = "";
 		if (finalCost > 0) {
 			result = "Ganancias";			

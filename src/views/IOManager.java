@@ -23,7 +23,8 @@ public class IOManager{
 															"7 Para ver los pollos vivos\n"+
 															"8 Para el valor total de los pollos vivos\n"+
 															"9 Para ver si obtuvo ganancias o si genero perdidas\n"+ 
-															"10 Para volver al menu anterior";  
+															"10 Para ver la tabla de porcentaje de pollos\n"+
+															"0 Para volver al menu anterior";  
 
 	public static final String MESSAGE_READ_CHICKEN_RACE = "Ingrese el tipo de raza de pollo \n"+
 															"1. Pollos Ecuatorianos \n" + 
@@ -65,8 +66,14 @@ public class IOManager{
 	public static final String CHICKEN_TOTAL = "Total de pollos vivos";
 	public static final String DEAD_CHICKEN = "Total de pollos muertos";
 
+	public static final String CHICKEN_ONE = "Pollos Ecuatorianos";
+	public static final String CHICKEN_TWO = "Pollos Blancos";
+	public static final String CHICKEN_THREE = "Polla Negra";
+
 	public static final String FORMAT = "%1$-25s %2$-20s %3$-20s %4$-25s %5$-30s %6$-15s";
+	public static final String FORMAT_REPORT = "%1$-25s %2$-20s %3$-20s";
 	public static final Object[] HEADERS = { CHICKEN_RACE, FOOD_PACKAGE, CAL_PACKAGE, CASC_PACKAGE, CHICKEN_TOTAL, DEAD_CHICKEN };
+	public static final Object[] HEADERS_REPORT = { CHICKEN_ONE, CHICKEN_TWO, CHICKEN_THREE};
 	
 
 	public IOManager(){
@@ -126,6 +133,10 @@ public class IOManager{
 	public byte readOptionMenuReports(){
 		System.out.println( MESSAGE_READ_MENU_REPORTS );
 		return Byte.parseByte( sc.nextLine() );
+	}
+	public int readDeadChicken(){
+		System.out.printf(GET_TOTAL_DEAD);
+		return Integer.parseInt(sc.nextLine());
 	}	
 	public void showCal(double cal){
 		DecimalFormat fd = new DecimalFormat( FORMAT_DECIMAL_CHICKEN );
@@ -153,10 +164,6 @@ public class IOManager{
 	public void showAlive(int alive){
 		System.out.printf(TOTAL_ALIVE, alive);
 	}
-	public int readDeadChicken(){
-		System.out.printf(GET_TOTAL_DEAD);
-		return Integer.parseInt(sc.nextLine());
-	}
 	public int showCorralChickenAdded(double total){
 	DecimalFormat fd = new DecimalFormat( FORMAT_DECIMAL_CHICKEN );
 	System.out.printf(TOTAL_CORRAL, fd.format(total));
@@ -171,6 +178,11 @@ public class IOManager{
 		System.out.printf(TOTAL_COST_CHICKEN, df.format(money));
 		System.out.println(BACK);
 		return Integer.parseInt(sc.nextLine());
+	}
+	public void generateHeaderReport(Object[] percentageRace){
+		System.out.println( String.format(FORMAT_REPORT, HEADERS_REPORT ));
+		System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println( String.format(FORMAT_REPORT, percentageRace ));
 	}
 	public void showSelledChicken(double selledChicken){
 		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
