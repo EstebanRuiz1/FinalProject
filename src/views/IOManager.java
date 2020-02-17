@@ -72,8 +72,9 @@ public class IOManager{
 
 	public static final String FORMAT = "%1$-25s %2$-20s %3$-20s %4$-25s %5$-30s %6$-15s";
 	public static final String FORMAT_REPORT = "%1$-25s %2$-20s %3$-20s";
-	public static final Object[] HEADERS = { CHICKEN_RACE, FOOD_PACKAGE, CAL_PACKAGE, CASC_PACKAGE, CHICKEN_TOTAL, DEAD_CHICKEN };
+	public static final Object[] HEADERS = { TOTAL_CHICKEN_RACE, TOTAL_FOOD_PACKAGE, TOTAL_CAL_PACKAGE, TOTAL_CASC_PACKAGE, TOTAL_CHICKEN_TOTAL, TOTAL_DEAD_CHICKEN };
 	public static final Object[] HEADERS_REPORT = { CHICKEN_ONE, CHICKEN_TWO, CHICKEN_THREE};
+	public static final Object[] UNDER_HEADERS_REPORT = { CHICKEN_ONE, CHICKEN_TWO, CHICKEN_THREE};
 	
 
 	public IOManager(){
@@ -184,6 +185,10 @@ public class IOManager{
 		System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------");
 		System.out.println( String.format(FORMAT_REPORT, percentageRace ));
 	}
+	public void generateTotalUnderHeader(Object[] totalAll){
+		System.out.println( String.format(FORMAT_REPORT, UNDER_HEADERS_REPORT ));
+		System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------");
+		System.out.println( String.format(FORMAT_REPORT, totalAll ));	}
 	public void showSelledChicken(double selledChicken){
 		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
 		System.out.printf(TOTAL_COST_CHICKEN, df.format(selledChicken));		

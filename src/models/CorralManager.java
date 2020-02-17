@@ -123,6 +123,9 @@ public class CorralManager{
 		}
 		return (counterChickenRace * PERCENTAGE) / top;
 	}
+	public int[] calculateTotalValue(){
+		Object[]
+	}
 	public Object[] toParseObject(double[] percentageRace){
 		return new Object[]{percentageRace[0], percentageRace[1],percentageRace[2]};
 	}

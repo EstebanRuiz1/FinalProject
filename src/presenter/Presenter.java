@@ -149,6 +149,10 @@ public class Presenter{
 		Object[] parseChickenList = corralManagerObj.toParseObject(raceChickenList);
 		io.generateHeaderReport(parseChickenList);
 	}
+	private void totalCount(){
+		int[] totalListValue = corralManagerObj.calculateTotalValue();
+		Object[] parseListValue = corralManagerObj.toParseObjectList();
+	}
 	private void createCorrals() {
 
 		Corral corralOne = new Corral( ChickenType.CHICKEN_ONE ,15, 6, 7, 800, 20);
