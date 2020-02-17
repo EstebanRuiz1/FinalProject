@@ -8,16 +8,18 @@ public class Corral {
 	private int chickenTotal;
 	private int deadChickens;
 	private ChickenType chickenType;
+	private int numberCorral;
 		
 
 	
-	public Corral( ChickenType chickenType, int foodPackage, int calPackage, int cascPackage, int chickenTotal, int deadChickens) {
+	public Corral(int numberCorral, ChickenType chickenType, int foodPackage, int calPackage, int cascPackage, int chickenTotal, int deadChickens) {
 		this.chickenType = chickenType;
 		this.foodPackage = foodPackage;
 		this.calPackage = calPackage;
 		this.cascPackage = cascPackage;
 		this.chickenTotal = chickenTotal;
 		this.deadChickens = deadChickens;
+		this.numberCorral = numberCorral;
 	}
 	public void setChickenType(ChickenType chickenType){
 		this.chickenType = chickenType;
@@ -25,8 +27,6 @@ public class Corral {
 	public ChickenType getChickenType(){
 		return this.chickenType;
 	}
-	
-
 	public void setFoodPackage(int foodPackage){
 		this.foodPackage = foodPackage;
 	}
@@ -62,9 +62,15 @@ public class Corral {
 	public int getDeadChikens(){
 		return this.deadChickens;
 	}
-	
+	public void setNumberCorral(int numberCorral){
+		this.numberCorral = numberCorral;
+	}
+	public int getNumberCorral(){
+		return this.numberCorral;
+	}
+
 	public Object[] objectSaver(){
-		return new Object[]{chickenType.getLabel(), foodPackage, calPackage, cascPackage, chickenTotal, deadChickens};
+		return new Object[]{numberCorral, chickenType.getLabel(), foodPackage, calPackage, cascPackage, chickenTotal, deadChickens};
 	}
 
 

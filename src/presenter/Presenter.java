@@ -30,6 +30,9 @@ public class Presenter{
 				case 3:
 					manageMenuReports();
 				break;
+				/*case 4:
+					totalCount();
+				brekak;*/					
 				case 0:
 					exitApp();
 				break;
@@ -79,6 +82,7 @@ public class Presenter{
 	}
 	private void manageAddCorral() {
 		
+		int numberCorral = io.readCorral(); 
 		ChickenType chickenType = io.readChickenType();
 		int foodPackage = io.readPurine();
 		int calPackage = io.readCalBags();
@@ -87,7 +91,7 @@ public class Presenter{
 		int deadChickens = io.readDeadChicken();
 		
 		
-		Corral corral = new Corral( chickenType, foodPackage, calPackage, cascPackage, chickenTotal, deadChickens );
+		Corral corral = new Corral( numberCorral, chickenType, foodPackage, calPackage, cascPackage, chickenTotal, deadChickens );
 		corralManagerObj.addCorral( corral );
 	}
 	private void showTotalCal(){
@@ -149,22 +153,22 @@ public class Presenter{
 		Object[] parseChickenList = corralManagerObj.toParseObject(raceChickenList);
 		io.generateHeaderReport(parseChickenList);
 	}
-	private void totalCount(){
+	/*private void totalCount(){
 		int[] totalListValue = corralManagerObj.calculateTotalValue();
-		Object[] parseListValue = corralManagerObj.toParseObjectList();
-	}
-	private void createCorrals() {
-
-		Corral corralOne = new Corral( ChickenType.CHICKEN_ONE ,15, 6, 7, 800, 20);
-		Corral corralTwo = new Corral (ChickenType.CHICKEN_ONE, 20,5,10,300,10);
-		Corral corralThree = new Corral (ChickenType.CHICKEN_ONE, 20,8,9,500,12);
-		Corral corralFour = new Corral (ChickenType.CHICKEN_ONE, 12,7,8,600,15); 
-		Corral corralFive = new Corral (ChickenType.CHICKEN_ONE, 15,9,6,500,25);
-		Corral corralSix = new Corral (ChickenType.CHICKEN_TWO, 12,5,9,600,12);
-		Corral corralSeven = new Corral (ChickenType.CHICKEN_TWO, 12,7,8,800,15);
-		Corral corralEight = new Corral (ChickenType.CHICKEN_TWO, 10,9,7,400,20);
-		Corral corralNine = new Corral (ChickenType.CHICKEN_TWO, 20,15,10,500,30);
-		Corral corralTen = new Corral (ChickenType.CHICKEN_TWO, 30,10,15,700,40);
+		Object[] parseListValue = corralManagerObj.toParseTotal(totalListValue);
+		io.generateTotalReport(parseListValue);
+	}*/
+	private void createCorrals() { 
+		Corral corralOne = new Corral(1, ChickenType.CHICKEN_ONE ,15, 6, 7, 800, 20);
+		Corral corralTwo = new Corral (2, ChickenType.CHICKEN_ONE, 20,5,10,300,10);
+		Corral corralThree = new Corral (3, ChickenType.CHICKEN_ONE, 20,8,9,500,12);
+		Corral corralFour = new Corral (4, ChickenType.CHICKEN_ONE, 12,7,8,600,15); 
+		Corral corralFive = new Corral (5, ChickenType.CHICKEN_ONE, 15,9,6,500,25);
+		Corral corralSix = new Corral (6,ChickenType.CHICKEN_TWO, 12,5,9,600,12);
+		Corral corralSeven = new Corral (7, ChickenType.CHICKEN_TWO, 12,7,8,800,15);
+		Corral corralEight = new Corral (8, ChickenType.CHICKEN_TWO, 10,9,7,400,20);
+		Corral corralNine = new Corral (9, ChickenType.CHICKEN_TWO, 20,15,10,500,30);
+		Corral corralTen = new Corral (10, ChickenType.CHICKEN_TWO, 30,10,15,700,40);
 
 		corralManagerObj.addCorral( corralOne );
 		corralManagerObj.addCorral( corralTwo );

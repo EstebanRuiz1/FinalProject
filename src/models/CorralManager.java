@@ -123,9 +123,17 @@ public class CorralManager{
 		}
 		return (counterChickenRace * PERCENTAGE) / top;
 	}
-	public int[] calculateTotalValue(){
-		Object[]
+	/*public int[] calculateTotalValue(){
+		int[] totalEverything = new int[corralList.length];
+		for (int i = 0;(i<corralList.length) && (corralList[i]) != null;i++ ) {
+			totalEverything[i] = corralList[i];
+		}
+		return totalEverything;
+
 	}
+	public Object[] toParseTotal(int [] totalChicken){
+		return new Object[]{totalChicken[1], totalChicken[2], totalChicken[3], totalChicken[4], totalChicken[5]};
+	}*/
 	public Object[] toParseObject(double[] percentageRace){
 		return new Object[]{percentageRace[0], percentageRace[1],percentageRace[2]};
 	}
