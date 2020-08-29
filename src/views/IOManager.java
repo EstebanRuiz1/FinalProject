@@ -12,7 +12,7 @@ public class IOManager{
 	public static final String PRINCIPAL_MENU_OPTION  = "1 Para agregar un nuevo corral de pollos\n"+
 														"2 Para ver la tabla de corrales\n"+
 														"3 Para ver la tabla de reportes\n"+
-														//"4 Para ver el total de todo\n"+
+														"4 Para ver el porcentaje de pollos vivos:\n"+
 														"0 para cerrar la aplicación";	
 	public static final String MESSAGE_READ_MENU_REPORTS = "Ingrese:\n"+
 															"1 Para ver el gasto total de cal\n"+
@@ -74,10 +74,10 @@ public class IOManager{
 
 	public static final String NUMBER_CORRAL = "Numero de corral";
 
-	public static final String FORMAT = "%1$-17s %2$-20s %3$-20s %4$-25s %5$-30s %6$-25s %7$-25s";
+	public static final String FORMAT = "%1$-17s %2$-20s %3$-20s %4$-25s %5$-30s %6$-25s %7$-25s %8$-20s %9$-15s %10$-20s";
 	public static final String FORMAT_TOTAL = "%1$-25s %2$-20s %3$-20s %4$-25s %5$-30s";
 	public static final String FORMAT_REPORT = "%1$-25s %2$-20s %3$-20s";
-	public static final Object[] HEADERS = { NUMBER_CORRAL, CHICKEN_RACE, FOOD_PACKAGE, CAL_PACKAGE, CASC_PACKAGE, CHICKEN_TOTAL, DEAD_CHICKEN };
+	public static final Object[] HEADERS = { NUMBER_CORRAL, CHICKEN_RACE, FOOD_PACKAGE, CAL_PACKAGE, CASC_PACKAGE, CHICKEN_TOTAL, DEAD_CHICKEN, "Porcentaje Vivos", "Porcentaje Muertos", "Total Gastos" };
 	public static final Object[] HEADERS_REPORT = { CHICKEN_ONE, CHICKEN_TWO, CHICKEN_THREE};
 	public static final Object[] HEADERS_TOTAL = { FOOD_PACKAGE, CAL_PACKAGE, CASC_PACKAGE, CHICKEN_TOTAL, DEAD_CHICKEN };
 	
@@ -194,13 +194,6 @@ public class IOManager{
 		System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------");
 		System.out.println( String.format(FORMAT_REPORT, percentageRace ));
 	}
-
-	/*public void generateTotalReport(Object[] totalAll){
-		System.out.println( String.format(FORMAT_TOTAL, HEADERS_TOTAL));
-		System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------");
-		System.out.println( String.format(FORMAT_TOTAL, totalAll ));	
-	}*/
-	
 	public void showSelledChicken(double selledChicken){
 		DecimalFormat df = new DecimalFormat( FORMAT_DECIMAL );
 		System.out.printf(TOTAL_COST_CHICKEN, df.format(selledChicken));		

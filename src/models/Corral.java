@@ -70,10 +70,35 @@ public class Corral {
 	}
 
 	public Object[] objectSaver(){
-		return new Object[]{numberCorral, chickenType.getLabel(), foodPackage, calPackage, cascPackage, chickenTotal, deadChickens};
+		return new Object[]{numberCorral, chickenType.getLabel(), foodPackage, calPackage, cascPackage, chickenTotal, deadChickens, this.getPercetageChickenAlive(), this.getPercetageChickenDead(), this.TotalExpenses() };
 	}
 
+	public double getPercetageChickenAlive(){
+		double chickensTotal = getChickensTotal();
+		double deadChickens = getDeadChikens();
 
-	
+		double chickenAlive = chickensTotal - deadChickens;
+
+
+		
+		return (chickenAlive * (double)100) / chickensTotal ;
+	} 
+	public double getPercetageChickenDead(){
+		double chickensTotal = getChickensTotal();
+		double deadChickens = getDeadChikens();
+		
+		
+		return (deadChickens * (double)100 ) / chickensTotal;
+	}
+
+	public double TotalExpenses(){
+		double foodPackage = getFoodPackage();
+		double calPackage =  getCalPackage();
+		double cascPackage = getCascPackage();
+
+		double totalExpenses =  foodPackage + calPackage + cascPackage;
+
+		return totalExpenses;
+	}
 	
 }

@@ -30,9 +30,6 @@ public class Presenter{
 				case 3:
 					manageMenuReports();
 				break;
-				/*case 4:
-					totalCount();
-				brekak;*/					
 				case 0:
 					exitApp();
 				break;
@@ -153,11 +150,6 @@ public class Presenter{
 		Object[] parseChickenList = corralManagerObj.toParseObject(raceChickenList);
 		io.generateHeaderReport(parseChickenList);
 	}
-	/*private void totalCount(){
-		int[] totalListValue = corralManagerObj.calculateTotalValue();
-		Object[] parseListValue = corralManagerObj.toParseTotal(totalListValue);
-		io.generateTotalReport(parseListValue);
-	}*/
 	private void createCorrals() { 
 		Corral corralOne = new Corral(1, ChickenType.CHICKEN_ONE ,15, 6, 7, 800, 20);
 		Corral corralTwo = new Corral (2, ChickenType.CHICKEN_ONE, 20,5,10,300,10);
